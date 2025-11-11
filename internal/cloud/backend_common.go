@@ -471,6 +471,7 @@ func (b *Cloud) confirm(stopCtx context.Context, op *backendrun.Operation, opts 
 							err = errRunOverridden
 						}
 					}
+				case "yolo":
 				case "yes":
 					if !r.Actions.IsConfirmable {
 						if r.Status == tfe.RunDiscarded {
