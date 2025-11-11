@@ -159,11 +159,11 @@ func (b *Cloud) opApply(stopCtx, cancelCtx context.Context, op *backendrun.Opera
 			if op.PlanMode == plans.DestroyMode {
 				opts.Query = "\nDo you really want to destroy all resources in workspace \"" + op.Workspace + "\"?"
 				opts.Description = "Terraform will destroy all your managed infrastructure, as shown above.\n" +
-					"There is no undo. Only 'yes' will be accepted to confirm."
+					"There is no undo. Only 'yes' or 'yolo' will be accepted to confirm."
 			} else {
 				opts.Query = "\nDo you want to perform these actions in workspace \"" + op.Workspace + "\"?"
 				opts.Description = "Terraform will perform the actions described above.\n" +
-					"Only 'yes' will be accepted to approve."
+					"Only 'yes' or 'yolo' will be accepted to approve."
 			}
 
 			err = b.confirm(stopCtx, op, opts, r, "yes")
